@@ -257,33 +257,41 @@
             <img src="images/admission/admission.jpg.jpg" alt="Admission Trial Class" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
         </div>
         <div class="admission-container" style="background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <form action="#" method="POST" class="main-admission-form">
+            <form action="https://api.web3forms.com/submit" method="POST" class="main-admission-form">
+
+    <input type="hidden" name="access_key" value="24f2ecc8-552b-49e4-869b-d25e5e6380ec">
+
+    <input type="hidden" name="subject" value="New Admission Form - Noor E Quran Academy">
+
+    <input type="hidden" name="from_name" value="Noor E Quran Academy Website">
+
+    <input type="hidden" name="redirect" value="https://noorequranacademy01-n.github.io/noor-e-quran-academy/">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
                     <div>
                         <label style="display:block; margin-bottom:8px; font-weight:600;">Student Full Name *</label>
-                        <input type="text" placeholder="Enter Full Name" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
+                        <input type="text" name="student_name" placeholder="Enter Full Name" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
                     </div>
                     <div>
                         <label style="display:block; margin-bottom:8px; font-weight:600;">Age *</label>
-                        <input type="number" placeholder="Student Age" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
+                       <input type="number" name="age" placeholder="Student Age" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
                     </div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
                     <div>
                         <label style="display:block; margin-bottom:8px; font-weight:600;">Country *</label>
-                        <input type="text" placeholder="Your Country" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
+                      <input type="text" name="country" placeholder="Your Country" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
                     </div>
                     <div>
                         <label style="display:block; margin-bottom:8px; font-weight:600;">WhatsApp Number *</label>
-                        <input type="tel" placeholder="e.g. +923416216489" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
+                      <input type="tel" name="whatsapp_number" placeholder="e.g. +923416216489" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
                     </div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
                     <div>
                         <label style="display:block; margin-bottom:8px; font-weight:600;">Select Course *</label>
-                        <select required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
+                        <select name="course" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;">
                             <option value="">-- Choose Course --</option>
                             <option value="qaida">Noorani Qaida</option>
                             <option value="reading">Quran Reading</option>
@@ -326,7 +334,7 @@
 
                 <div style="margin-bottom: 20px;">
                     <label style="display:block; margin-bottom:8px; font-weight:600;">Preferred Time & Special Instructions</label>
-                    <textarea rows="4" placeholder="Enter your convenient timing or messages here..." style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; font-family:inherit;"></textarea>
+                   <textarea name="message" rows="4" placeholder="Enter your convenient timing or messages here..." style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; font-family:inherit;"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; font-size:18px; font-weight:bold; cursor:pointer;">
