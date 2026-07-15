@@ -343,11 +343,24 @@
                 </button>
             </form>
             <!-- 1. Shukriya (Success) Message Box -->
-<div id="shukriya-box" style="display: none; color: #2ecc71; background: rgba(46, 204, 113, 0.1); border: 1px solid #2ecc71; padding: 20px; border-radius: 8px; text-align: center; margin-top: 15px; font-weight: 600; font-size: 18px;">
-    Thank you! Your form has been submitted successfully.
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<div id="shukriya-box" style="display: none; background: #ffffff; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); padding: 50px 40px; text-align: center; margin: 30px auto; max-width: 600px; border-top: 6px solid #2ecc71; animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;">
+    
+    <div style="width: 90px; height: 90px; background: rgba(46, 204, 113, 0.15); color: #2ecc71; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; font-size: 45px; font-weight: bold; animation: pulse 2s infinite;">
+        ✓
+    </div>
+    
+    <h3 style="color: #1a252f; font-size: 28px; margin-bottom: 15px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif;">
+        🎉 Congratulations! 🎉
+    </h3>
+    
+    <p style="color: #7f8c8d; font-size: 18px; line-height: 1.7; margin: 0; font-weight: 500;">
+        Thank you! Your application has been received. <br>
+        We are excited to welcome you! We will contact you shortly to book your <strong>Free Trial Class</strong>.
+    </p>
 </div>
 
-<!-- 2. Chota sa Script Code jo Web3Forms ko handle karega -->
 <script>
 const form = document.getElementById('contact-form');
 const successBox = document.getElementById('shukriya-box');
@@ -380,6 +393,19 @@ if (form) {
                 // Form gayab ho jaye aur Thank You message show ho jaye
                 form.style.display = 'none';
                 successBox.style.display = 'block';
+                
+                // 🎉 Confetti Effect (Colors ki barish)
+                confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { x: 0.2, y: 0.6 }
+                });
+                confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { x: 0.8, y: 0.6 }
+                });
+                
             } else {
                 alert("Something went wrong. Please try again.");
                 btn.innerHTML = originalText;
@@ -394,8 +420,7 @@ if (form) {
         });
     });
 }
-</script>
-        </div>
+</script>        </div>
     </div>
 </section>
 

@@ -1859,66 +1859,117 @@ footer a:hover,
 [class*="footer"] a:hover {
     color: #00ffaa !important; /* Mint green ya gold touch dene ke liye */
 }
-/* --- MOBILE RESPONSIVE FIXES (Screens under 768px) --- */
+/* --- ULTIMATE PREMIUM MOBILE & ANIMATION CSS --- */
 @media (max-width: 768px) {
-    /* Main container ki padding thodi kam karein taaki screen space bache */
-    .container {
-        padding: 0 16px !important;
-    }
-
-    /* Hero section ka spacing aur text center karein */
-    .hero, .hero-section {
-        padding: 120px 0 60px 0 !important;
+    /* 1. Header, Logo aur Navigation Menu ko center aur clean karein */
+    .header, header.hero {
+        padding: 10px 5px !important;
         text-align: center !important;
     }
 
-    /* Main heading ka size mobile ke mutabiq chota aur haseen karein */
-    .hero h1, .hero-content h1 {
-        font-size: 32px !important; /* Laptop par 56px tha, mobile par 32px bilkul perfect fit aayega */
-        line-height: 1.25 !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* Hero ka paragraph text format */
-    .hero p, .hero-content p {
-        font-size: 15px !important;
-        line-height: 1.5 !important;
-        margin-bottom: 25px !important;
-    }
-
-    /* Buttons ko mobile par ek ke neeche ek (vertical) ya center fit karein */
-    .hero-cta-buttons, .cta-buttons {
+    .navbar {
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
         align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .logo {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .logo img {
+        max-height: 40px !important; /* Logo perfectly sized */
+    }
+
+    .logo h2 {
+        font-size: 18px !important;
+        margin-left: 0 !important;
+        margin-top: 5px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important; /* Premium Font Lock */
+    }
+
+    /* 2. Menu links (.nav-links) ko horizontal modern pill shape mein badlein */
+    ul.nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
         justify-content: center !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        list-style: none !important;
+        margin-top: 5px !important;
     }
 
-    .btn, .button {
-        width: 100% !important; /* Buttons poori width cover karein taaki tap karna aasan ho */
-        max-width: 280px !important;
-        justify-content: center !important;
-    }
-
-    /* Glass boxes (5000+, 25+ Teachers) ko mobile par single column ya neat double column karein */
-    .stats-container, .hero-stats {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* 2-2 karke pyaare dabba style mein show honge */
-        gap: 12px !important;
-        margin-top: 30px !important;
-    }
-
-    /* Un glass boxes ke andar ka text chota karein taaki screen se bahar na jaye */
-    .stats-card, .glass-box {
-        padding: 15px 10px !important;
-    }
-
-    .stats-card h3, .glass-box h3 {
-        font-size: 20px !important;
-    }
-
-    .stats-card p, .glass-box p {
+    ul.nav-links li a {
         font-size: 11px !important;
+        font-weight: 600 !important;
+        padding: 6px 12px !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 30px !important; /* Premium capsule shape */
+        color: #ffffff !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
     }
+
+    /* 3. Responsive Layout - No Horizontal Scroll (Lock width) */
+    .admission-container, .grid-container, .features-grid, .services-grid, .testimonial-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+        gap: 15px !important;
+    }
+
+    /* 4. Font Sizes aur Cards Mobile Style Lock */
+    .card, .glass-box, .testimonial-card, .contact-card {
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+        padding: 20px 15px !important;
+        box-sizing: border-box !important;
+        border-radius: 16px !important; /* Modern premium rounded corner */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+    }
+
+    h1, .hero h1 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        font-weight: 800 !important;
+    }
+
+    p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* 5. Buttons full width aur clean rounded shape */
+    .btn, button[type="submit"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 14px !important;
+        font-size: 16px !important;
+        border-radius: 30px !important;
+        box-sizing: border-box !important;
+        transition: transform 0.2s ease, background-color 0.2s ease !important;
+    }
+}
+
+/* --- PREMIUM ANIMATION STYLES (For Thank You Card) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#shukriya-box {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) ease-in-out !important;
 }
