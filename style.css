@@ -1859,39 +1859,58 @@ footer a:hover,
 [class*="footer"] a:hover {
     color: #00ffaa !important; /* Mint green ya gold touch dene ke liye */
 }
-/* --- ULTIMATE PREMIUM MOBILE & ANIMATION CSS --- */
+/* ==================== 100% FINAL MOBILE & ANIMATION FIX ==================== */
 @media (max-width: 768px) {
-    /* 1. Header, Logo aur Navigation Menu ko center aur clean karein */
+    /* 1. Header aur Logo ko dark theme aur visible rakhein */
     .header, header.hero {
-        padding: 10px 5px !important;
-        text-align: center !important;
+        padding-top: 110px !important; /* Content ko upar white border ya navbar se niche push karne ke liye */
+        background: linear-gradient(rgba(3, 20, 14, 0.65), rgba(3, 20, 14, 0.65)), url('images/hero/hero-3d-setup.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
     }
 
+    /* Navbar layout correction */
     .navbar {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(3, 20, 14, 0.95) !important; /* Semi-transparent dark green, no more white background! */
+        padding: 15px 10px !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         gap: 10px !important;
+        z-index: 9999 !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
     }
 
     .logo {
         display: flex !important;
-        flex-direction: column !important;
         align-items: center !important;
+        justify-content: center !important;
     }
 
     .logo img {
-        max-height: 40px !important; /* Logo perfectly sized */
+        max-height: 35px !important;
     }
 
     .logo h2 {
         font-size: 18px !important;
-        margin-left: 0 !important;
-        margin-top: 5px !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important; /* Premium Font Lock */
+        color: #ffffff !important;
+        margin-left: 8px !important;
     }
 
-    /* 2. Menu links (.nav-links) ko horizontal modern pill shape mein badlein */
+    .logo h2 span {
+        color: #2ecc71 !important;
+    }
+
+    /* 2. Menu Links (.nav-links) Mobile standard caps formatting */
     ul.nav-links {
         display: flex !important;
         flex-direction: row !important;
@@ -1899,77 +1918,82 @@ footer a:hover,
         justify-content: center !important;
         gap: 8px !important;
         padding: 0 !important;
+        margin: 5px 0 0 0 !important;
         list-style: none !important;
-        margin-top: 5px !important;
+        width: 100% !important;
+    }
+
+    ul.nav-links li {
+        margin: 0 !important;
     }
 
     ul.nav-links li a {
         font-size: 11px !important;
         font-weight: 600 !important;
-        padding: 6px 12px !important;
-        background: rgba(255, 255, 255, 0.12) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        border-radius: 30px !important; /* Premium capsule shape */
+        padding: 6px 10px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 20px !important;
         color: #ffffff !important;
         text-decoration: none !important;
+        display: inline-block !important;
         transition: all 0.3s ease !important;
     }
 
-    /* 3. Responsive Layout - No Horizontal Scroll (Lock width) */
+    /* Active page colors */
+    ul.nav-links li a:hover {
+        background: #2ecc71 !important;
+        color: #ffffff !important;
+    }
+
+    /* 3. Hero content (Text "Learn Quran..." full visibility check) */
+    .hero-content {
+        text-align: center !important;
+        padding: 0 15px !important;
+        z-index: 10 !important;
+    }
+
+    .hero h1 {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        margin-bottom: 12px !important;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .hero p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #e0e0e0 !important;
+        margin-bottom: 20px !important;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    /* 4. Grid and Sections Lock - No Horizontal Scroll */
     .admission-container, .grid-container, .features-grid, .services-grid, .testimonial-container {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
         padding: 15px !important;
         box-sizing: border-box !important;
-        gap: 15px !important;
     }
 
-    /* 4. Font Sizes aur Cards Mobile Style Lock */
     .card, .glass-box, .testimonial-card, .contact-card {
         width: 100% !important;
-        margin: 0 0 10px 0 !important;
-        padding: 20px 15px !important;
+        margin: 0 0 15px 0 !important;
         box-sizing: border-box !important;
-        border-radius: 16px !important; /* Modern premium rounded corner */
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
-    }
-
-    h1, .hero h1 {
-        font-size: 24px !important;
-        line-height: 1.3 !important;
-        font-weight: 800 !important;
-    }
-
-    p {
-        font-size: 14px !important;
-        line-height: 1.6 !important;
-    }
-
-    /* 5. Buttons full width aur clean rounded shape */
-    .btn, button[type="submit"] {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 14px !important;
-        font-size: 16px !important;
-        border-radius: 30px !important;
-        box-sizing: border-box !important;
-        transition: transform 0.2s ease, background-color 0.2s ease !important;
+        border-radius: 12px !important;
     }
 }
 
-/* --- PREMIUM ANIMATION STYLES (For Thank You Card) --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+/* Animations for Shukriya Card */
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
 }
-
-#shukriya-box {
-    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) ease-in-out !important;
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
 }
