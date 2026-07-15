@@ -258,7 +258,7 @@
             <img src="images/admission/admission.jpg.jpg" alt="Admission Trial Class" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
         </div>
         <div class="admission-container" style="background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <form action="https://api.web3forms.com/submit" method="POST" class="main-admission-form">
+           <form action="https://api.web3forms.com/submit" method="POST" class="main-admission-form" id="contact-form">
 
     <input type="hidden" name="access_key" value="24f2ecc8-552b-49e4-869b-d25e5e6380ec">
 
@@ -342,6 +342,59 @@
                     Submit Application & Book Free Trial
                 </button>
             </form>
+            <!-- 1. Shukriya (Success) Message Box -->
+<div id="shukriya-box" style="display: none; color: #2ecc71; background: rgba(46, 204, 113, 0.1); border: 1px solid #2ecc71; padding: 20px; border-radius: 8px; text-align: center; margin-top: 15px; font-weight: 600; font-size: 18px;">
+    Thank you! Your form has been submitted successfully.
+</div>
+
+<!-- 2. Chota sa Script Code jo Web3Forms ko handle karega -->
+<script>
+const form = document.getElementById('contact-form');
+const successBox = document.getElementById('shukriya-box');
+
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Default reload ko rokne ke liye
+        
+        // Button par "Submitting..." show karne ke liye
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "Submitting...";
+        btn.disabled = true;
+        
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        // Web3Forms ko background mein data bhejne ke liye
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            if (response.status == 200) {
+                // Form gayab ho jaye aur Thank You message show ho jaye
+                form.style.display = 'none';
+                successBox.style.display = 'block';
+            } else {
+                alert("Something went wrong. Please try again.");
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            alert("Connection error. Please try again.");
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+    });
+}
+</script>
         </div>
     </div>
 </section>

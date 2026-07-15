@@ -1859,3 +1859,66 @@ footer a:hover,
 [class*="footer"] a:hover {
     color: #00ffaa !important; /* Mint green ya gold touch dene ke liye */
 }
+/* --- MOBILE RESPONSIVE FIXES (Screens under 768px) --- */
+@media (max-width: 768px) {
+    /* Main container ki padding thodi kam karein taaki screen space bache */
+    .container {
+        padding: 0 16px !important;
+    }
+
+    /* Hero section ka spacing aur text center karein */
+    .hero, .hero-section {
+        padding: 120px 0 60px 0 !important;
+        text-align: center !important;
+    }
+
+    /* Main heading ka size mobile ke mutabiq chota aur haseen karein */
+    .hero h1, .hero-content h1 {
+        font-size: 32px !important; /* Laptop par 56px tha, mobile par 32px bilkul perfect fit aayega */
+        line-height: 1.25 !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Hero ka paragraph text format */
+    .hero p, .hero-content p {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* Buttons ko mobile par ek ke neeche ek (vertical) ya center fit karein */
+    .hero-cta-buttons, .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .btn, .button {
+        width: 100% !important; /* Buttons poori width cover karein taaki tap karna aasan ho */
+        max-width: 280px !important;
+        justify-content: center !important;
+    }
+
+    /* Glass boxes (5000+, 25+ Teachers) ko mobile par single column ya neat double column karein */
+    .stats-container, .hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2-2 karke pyaare dabba style mein show honge */
+        gap: 12px !important;
+        margin-top: 30px !important;
+    }
+
+    /* Un glass boxes ke andar ka text chota karein taaki screen se bahar na jaye */
+    .stats-card, .glass-box {
+        padding: 15px 10px !important;
+    }
+
+    .stats-card h3, .glass-box h3 {
+        font-size: 20px !important;
+    }
+
+    .stats-card p, .glass-box p {
+        font-size: 11px !important;
+    }
+}
